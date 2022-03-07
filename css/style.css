@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+.fortune {
+    text-align: center;
+    margin-top: 110px;
+}
+
+h1.omikuji {
+    font-size: 50px;
+    color: gray;
+    margin-bottom: 40px;
+}
+
+input#btn {
+    border: 2px solid red;
+    padding: 20px;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+#space {
+    color: gray;
+    font-size: 60px;
+}
+
+
