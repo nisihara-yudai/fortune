@@ -46,7 +46,7 @@
 function ButtonClick() {
   const fortune = ["大吉", "中吉", "小吉", "末吉", "凶"]; //おみくじの内容を配列で作る
   document.getElementById("space").innerHTML = fortune[Math.floor(Math.random() * fortune.length)];
-  // 
+  // id要素の「space」に、「「fortune」という配列の内容を読み取る」というHTML要素を取得している
 }
 
 
