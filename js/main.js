@@ -45,8 +45,31 @@
 // 参考資料を元に作ってみた
 function ButtonClick() { //関数ButtonClickで定義することで、ボタンをクリックする度に、繰り返し処理を使う事ができる
   const fortune = ["大吉", "中吉", "小吉", "末吉", "凶"]; //おみくじの内容を配列で作る
-  document.getElementById("space").innerHTML = fortune[Math.floor(Math.random() * fortune.length)];
-  // id要素の「space」に、「「fortune」という配列の内容を読み取る」というHTML要素を取得している
+
+  // document.getElementsByClassName('space').textContent="今日の運勢は何かな？" //spaceクラスの文字をelementsで定義している
+
+  // str01 = str01.textContent;
+
+  // console.log(elements);
+
+  let str01 = fortune[Math.floor(Math.random() * fortune.length)]; //str01を、おみくじの中身で何が出るかを決める形に定めている
+
+  let str02 = document.getElementsByClassName('space'); //str02をおみくじの結果を入れる箱のクラス名に定めている。
+
+  str02.textcontent = str02.replace(str02, str01);
+
+  // str02 = str02.textContent;
+
+  // console.log(str01);
+
+  // console.log(str02);
+
+  // .textContent = str02;
+
+  // document.getElementsByClassName("space").innerHTML = fortune[Math.floor(Math.random() * fortune.length)];
+  // class要素の「space」に、「「fortune」という配列の内容を読み取る」というHTML要素を取得している
+
+  // console.log(new_elements); //elementsクラスの内容をconsole.logで表現している
 }
 
 
