@@ -52,25 +52,92 @@ function ButtonClick() { //関数ButtonClickで定義することで、ボタン
 
   // console.log(elements);
 
-  let str01 = fortune[Math.floor(Math.random() * fortune.length)]; //str01を、おみくじの中身で何が出るかを決める形に定めている
+  let str01 = document.getElementsByClassName("space"); //str01をおみくじの結果を入れる箱のクラス名として取得している。
 
-  let str02 = document.getElementsByClassName('space'); //str02をおみくじの結果を入れる箱のクラス名に定めている。
+  console.log(str01);
 
-  str02.textcontent = str02.replace(str02, str01);
+  let i = 0; //HTMLの要素数を示している
 
-  // str02 = str02.textContent;
+  console.log(str01.length); //HTMLの要素数を調べている
+
+  // console.log(str01.length[0]); //添字を使って1つ目の要素を取り出す
+
+  let str01_sub = str01.innerHTML; //divのHTML(文字列)を取得
+
+  // console.log(str01_sub); //文字列の取得を確認する為に必要な項目
+
+  console.log(str01[0]); //添字を使って一つ目の要素を取り出す (ここでいうと<div class="space">今日の運勢は何かな?</div>)
+  
+  let str02 = fortune[Math.floor(Math.random() * fortune.length)]; //str01を、おみくじの中身で何が出るかを決める形に定めている
+
+  str02 = "今日の運勢は、" + str02 + "です。"; //「今日の運勢は、〇〇です。」という文字列を定義している
+
+  console.log(str02);//コンソールで「今日の運勢は、〇〇です。」と出力する
+
+  for (i = 0; i < str01.length; i++){
+    var str_sub = str01[i].innerHTML; //HTMLを取り出す
+
+    str_sub = str_sub.replace(/今日の運勢は何かな？/g , str02); // replaceする
+
+    document.getElementsByClassName("space")[i].innerHTML = str_sub; //元のHTMLソースをreplaceしたものに置き換える
+
+  }
+  // str01_sub = str01_sub.replace(/今日の運勢は何かな?/g , 'str02'); //新しい変数を使って、「今日の運勢は何かな?」を「今日の運勢は〇〇です。」に置き換えている
+  
+  // console.log(str01_sub);
+
+  // document.getElementsByClassName("space").innerHTML = str01_sub;//元のHTMLコードをreplaceしたものに置き換える
+
+  // if (str01 = "今日の運勢は何かな?") {
+  //   document.getElementsByClassName('space').innerHTML = result;
+  // } else {
+  //   document.getElementsByClassName('space').innerHTML = "今日の運勢は何かな?";
+  // } もしもstr01が「今日の運勢は何かな?」となっていれば、おみくじの結果を入れて、
+
+  // console.log(result); //置き換えた内容をコンソールで出す。
+
+
+
+  // if (str01.textContent =="今日の運勢は何かな?") {
+  //   str01.innerText = str02;
+  // } else {
+  //   str01.innerText = "今日の運勢は何かな?";
+  // } //もしも文字が「今日の運勢は何かな?」となっていれば、おみくじの結果を出力する。そうでなければ、「今日の運勢は何かな?」と出力する
+
+  // const btn = document.getElementsByClassName('btn');
+
+  // btn.addEventListener('click', () => {
+  //   btn.textContent = str02;
+  // })
 
   // console.log(str01);
-
   // console.log(str02);
 
-  // .textContent = str02;
+  // new_str = new_str.replace(str01, str02);
+  // 取得したデータを書き換える
 
+  // str01.textContent = "今日の運勢は、" + str01 + "です。";
+
+  // let strElement = str01[0].innerHTML;
+
+  // console.log(strElement);
   // document.getElementsByClassName("space").innerHTML = fortune[Math.floor(Math.random() * fortune.length)];
   // class要素の「space」に、「「fortune」という配列の内容を読み取る」というHTML要素を取得している
 
   // console.log(new_elements); //elementsクラスの内容をconsole.logで表現している
 }
 
+// window.onload = function () {
+//   document.getElementById("sampleForm").onreset = function () {
+//     return confirm("内容をリセットしますか？");
+//   }
+// }
 
-
+function ButtonReset() {
+  if (window.confirm('リセットしてもよろしいでしょうか？')) { //確認ダイアログを表示
+    return document.getElementsByClassName("space").innerHTML = "今日の運勢は何かな？"; //「OK」時はリセットを実行
+  } else { //「キャンセル」時の処理
+    window.alert('キャンセルされました'); //警告ダイアログを表示
+    return false; //リセットを中止
+  }
+}
