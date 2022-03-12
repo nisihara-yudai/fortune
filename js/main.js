@@ -133,9 +133,11 @@ function ButtonClick() { //関数ButtonClickで定義することで、ボタン
 //   }
 // }
 
-function ButtonReset() {
+function ButtonReload() {
   if (window.confirm('リセットしてもよろしいでしょうか？')) { //確認ダイアログを表示
-    return document.getElementsByClassName("space").innerHTML = "今日の運勢は何かな？"; //「OK」時はリセットを実行
+    // return document.getElementsByClassName("space").innerHTML = "今日の運勢は何かな？"; //「OK」時はリセットを実行
+    window.location.reload();
+    //reloadメソッドよりページをリロード
   } else { //「キャンセル」時の処理
     window.alert('キャンセルされました'); //警告ダイアログを表示
     return false; //リセットを中止

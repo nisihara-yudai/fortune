@@ -20,6 +20,15 @@ input#btn {
     margin-bottom: 35px;
 }
 
+input#reload_button {
+    border: 2px solid #318;
+    padding: 20px 40px;
+    font-size: 20px;
+    color: white;
+    background: #318;
+    margin-bottom: 40px;
+}
+
 .space {
     color: gray;
     font-size: 60px;
